@@ -1,17 +1,15 @@
 <template>
-<div class="locations">
- <h2>Locations comp</h2>
+<div class="page page-episodes">
+  <h2>Episodes</h2>
+  <p>episodes comp here</p>
 </div>
 </template>
 
-
 <script>
 export default {
-  name: 'Characters',
-  // props: ['character'],
+  name: 'PageEpisodes',
 }
 </script>
-
 
 <style scoped lang="scss">
 

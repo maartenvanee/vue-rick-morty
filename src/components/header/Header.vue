@@ -1,13 +1,11 @@
 <template>
   <div class="header">
 
-          <router-link to="/"><h1>Rick and Morty</h1></router-link>
+    <router-link to="/"><h1>Rick and Morty</h1></router-link>
 
     <ul class="menu">
       <li>
-        <p>
-          <router-link to="/characters">Characters</router-link>
-          </p>
+        <router-link to="/characters">Characters</router-link>
       </li>
       <li>
         <router-link to="/locations">Locations</router-link>
@@ -33,16 +31,37 @@ export default {
   display: block;
   width: 100%;
   background-color: rgb(232, 232, 238);
-  padding: 30px 40px;
+  padding: $page-padding;
 
   h1 {
-    font-size: 30px;
+    font-size: $font-size-h1;
+    line-height: 40px;
   }
 
-  ul {
+  ul.menu {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    padding: $page-padding;
+    display: inline-block;
+
     li {
       display: inline-block;
       list-style: none;
+      line-height: 40px;
+      font-weight: bold;
+
+      a {
+        opacity: 0.6;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 40px;
+      }
     }
   }
 }

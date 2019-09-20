@@ -1,10 +1,10 @@
 
 <template>
 
-<div class="intro">
+<div class="character-list">
   <ul>
-    <li v-for="character in characters" v-bind:key="character.id">
-        <Character v-bind:character="character" />
+    <li v-for="character in charactersData" v-bind:key="character.id">
+      <Character v-bind:character="character" />
     </li>
   </ul>
 </div>
@@ -12,25 +12,24 @@
 </template>
 
 <script>
-import Character from '../character/Character.vue'
+import Character from './Character.vue'
 import axios from 'axios';
 
 export default {
-  name: 'Intro',
+  name: 'CharacterList',
+  props: ['ids'],
   components: {
     Character
   },
   data() {
     return {
-      characters: null,
+      charactersData: null,
     }
   },
   mounted () {
-    axios
-      .get('https://rickandmortyapi.com/api/character/1,2,183')
-      .then(response => {
-        this.characters = response.data
-      });
+    axios.get('https://rickandmortyapi.com/api/character/' + this.ids).then(response => {
+      this.charactersData = response.data
+    });
   }
 }
 </script>
@@ -38,8 +37,7 @@ export default {
 
 <style scoped lang="scss">
 
-  .intro {
-    padding: 30px 40px;
+  .character-list {
 
     ul {
       padding-top: 20px;

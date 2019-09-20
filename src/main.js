@@ -2,37 +2,40 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 
-import Intro from './components/intro/Intro'
-import Characters from './components/characters/Characters'
-import Locations from './components/locations/Locations'
-import Episodes from './components/episodes/Episodes'
+import PageIntro from './components/pages/PageIntro'
+import PageCharacters from './components/pages/PageCharacters'
+import PageLocations from './components/pages/PageLocations'
+import PageEpisodes from './components/pages/PageEpisodes'
+
+import './sass/main.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+
 const routes = [
   {
     path: '/',
-    component: Intro
+    component: PageIntro
   },
   {
     path: '/characters',
-    component: Characters
+    component: PageCharacters
   },
   {
     path: '/locations',
-    component: Locations
+    component: PageLocations
   },
   {
     path: '/episodes',
-    component: Episodes
+    component: PageEpisodes
   }
 ];
+
 const router = new VueRouter({
   mode: 'history',
   routes,
 })
-
 
 new Vue({
   render: h => h(App),
