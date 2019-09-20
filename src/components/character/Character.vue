@@ -2,7 +2,7 @@
 <div class="character">
   <h2>{{character.name}}</h2>
   <img v-bind:src="character.image" />
-  <p>{{character.status}}, {{character.species}}</p>
+  <p>{{character.status}}, {{character.species}}, {{character.gender}}</p>
   <p>{{character.origin.name}}</p>
 </div>
 </template>
@@ -20,8 +20,9 @@ export default {
 
 img {
   width: 200px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
+  border-radius: 6px;
 }
 
 p {

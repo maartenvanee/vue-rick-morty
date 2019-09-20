@@ -29,7 +29,6 @@ export default {
     axios
       .get('https://rickandmortyapi.com/api/character/1,2,183')
       .then(response => {
-      console.log("!: mounted -> response", response.data);
         this.characters = response.data
       });
   }
@@ -43,7 +42,7 @@ export default {
     padding: 30px 40px;
 
     ul {
-      padding-top: 40px;
+      padding-top: 20px;
       li {
         display: inline-block;
         list-style: none;
