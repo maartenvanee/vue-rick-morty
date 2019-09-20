@@ -31,7 +31,7 @@ export default {
   display: block;
   width: 100%;
   background-color: rgb(232, 232, 238);
-  padding: $page-padding;
+  padding: $spacing;
 
   h1 {
     font-size: $font-size-h1;
@@ -42,7 +42,7 @@ export default {
     position: absolute;
     right: 0px;
     top: 0;
-    padding: $page-padding;
+    padding: $spacing;
     display: inline-block;
 
     li {

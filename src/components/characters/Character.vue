@@ -19,7 +19,8 @@ export default {
 <style scoped lang="scss">
 
 img {
-  width: 200px;
+  width: 100%;
+  max-width: 300px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 6px;
@@ -27,5 +28,10 @@ img {
 
 p {
   margin-bottom: 4px;
+  width: 100%;
+}
+
+h2 {
+  width: 100%;
 }
 </style>

@@ -2,7 +2,7 @@
 
 <div class="page page-characters">
   <h2>Characters</h2>
-  <CharacterList ids="1,2,183" />
+  <CharacterList ids="" />
 </div>
 
 </template>

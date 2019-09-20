@@ -1,8 +1,7 @@
 <template>
 
 <div class="page page-intro">
-  <h2>Intro</h2>
-  <CharacterList ids="1,2,183" />
+  <CharacterList ids="1,2" />
 </div>
 
 </template>
