@@ -1,5 +1,5 @@
 <template>
-<div class="character">
+<div class="character-thumb">
   <h2>{{character.name}}</h2>
   <img v-bind:src="character.image" />
   <p>{{character.status}}, {{character.species}}, {{character.gender}}</p>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Character',
+  name: 'CharacterThumb',
   props: ['character'],
 }
 </script>

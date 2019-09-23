@@ -1,46 +1,40 @@
 <template>
 
-<div class="character-list">
-  <ul><li v-for="character in charactersData" v-bind:key="character.id">
-      <CharacterThumb v-bind:character="character" />
+<div class="location-list">
+  <ul><li v-for="location in locationsData" v-bind:key="location.id">
+      <LocationThumb v-bind:location="location" />
     </li></ul>
 
-  <button v-if="!ids" class="button-more" v-on:click="getMoreCharacters">More</button>
+  <button v-if="!ids" class="button-more" v-on:click="getMoreLocations">More</button>
 </div>
 
 </template>
 
 <script>
-import CharacterThumb from './CharacterThumb.vue'
+import LocationThumb from './LocationThumb.vue'
 import axios from 'axios';
 
 export default {
-  name: 'CharacterList',
+  name: 'LocationList',
   props: ['ids'],
   components: {
-    CharacterThumb
+    LocationThumb
   },
   data() {
     return {
-      charactersData: [],
-      characterUrl: 'https://rickandmortyapi.com/api/character/',
-      pageNumber: 1
+      locationsData: [],
+      locationUrl: 'https://rickandmortyapi.com/api/location/',
+      pageNumber: 0
     }
   },
   mounted () {
-    axios.get(this.characterUrl + this.ids).then(response => {
-      if(this.ids) {
-        this.charactersData = response.data
-      } else {
-        this.charactersData = response.data.results
-      }
-    });
+    this.getMoreLocations();
   },
   methods: {
-    getMoreCharacters: function () {
+    getMoreLocations: function () {
       this.pageNumber += 1;
-      axios.get(this.characterUrl + `?page=${this.pageNumber}`).then(response => {
-          this.charactersData = this.charactersData.concat(response.data.results);
+      axios.get(this.locationUrl + `?page=${this.pageNumber}`).then(response => {
+          this.locationsData = this.locationsData.concat(response.data.results);
       })
     }
   }
