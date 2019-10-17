@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-episodes">
+  <div>
     <h2>Episodes</h2>
     <EpisodeList />
   </div>

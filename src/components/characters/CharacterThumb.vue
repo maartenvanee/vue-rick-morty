@@ -1,23 +1,24 @@
 <template>
-<div class="character-thumb">
-  <h2>{{character.name}}</h2>
-  <img v-bind:src="character.image" />
-  <p>{{character.status}}, {{character.species}}, {{character.gender}}</p>
-  <p>{{character.origin.name}}</p>
-</div>
+  <div class="character-thumb">
+    <router-link :to="{ name: 'character', params: {id: character.id } }">
+      <h3>{{character.name}}</h3>
+      <img v-bind:src="character.image" />
+      <p>{{character.status}}, {{character.species}}, {{character.gender}}</p>
+      <p>{{character.origin.name}}</p>
+    </router-link>
+  </div>
 </template>
 
 
 <script>
 export default {
-  name: 'CharacterThumb',
-  props: ['character'],
-}
+  name: "CharacterThumb",
+  props: ["character"]
+};
 </script>
 
 
 <style scoped lang="scss">
-
 img {
   width: 100%;
   max-width: 300px;

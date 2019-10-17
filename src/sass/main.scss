@@ -19,10 +19,23 @@ li {
   vertical-align: top;
 }
 
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
 .page {
-  > h1,
-  > h2 {
-    margin: $spacing 0 $spacing $spacing;
+  padding: $spacing;
+  h1,
+  h2 {
+    margin-bottom: $spacing;
   }
 }
 
@@ -39,5 +52,42 @@ button {
   transition: background-color 0.2s ease;
   &:hover {
     background-color: darken($color: #498341, $amount: 7);
+  }
+}
+
+.thumb-list {
+  width: 100%;
+
+  ul {
+    width: 100%;
+
+    li {
+      display: inline-block;
+      width: 22%;
+      list-style: none;
+      margin-right: $spacing;
+      margin-bottom: $spacing;
+    }
+    @media (max-width: 1390px) {
+      li {
+        width: 29%;
+      }
+    }
+    @media (max-width: 1200px) {
+      li {
+        width: 29%;
+      }
+    }
+    @media (max-width: 1050px) {
+      li {
+        width: 44%;
+      }
+    }
+    @media (max-width: 750px) {
+      li {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
   }
 }

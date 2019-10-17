@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-locations">
+  <div>
     <h2>Locations</h2>
     <LocationList />
   </div>

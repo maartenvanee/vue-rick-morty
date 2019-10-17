@@ -1,5 +1,5 @@
 <template>
-  <div class="episode-list">
+  <div class="thumb-list">
     <ul>
       <li v-for="episode in episodesData" v-bind:key="episode.id">
         <EpisodeThumb v-bind:episode="episode" />
@@ -49,45 +49,4 @@ export default {
 
 
 <style scoped lang="scss">
-.episode-list {
-  width: 100%;
-  padding-left: $spacing;
-
-  ul {
-    width: 100%;
-
-    li {
-      display: inline-block;
-      width: 22%;
-      list-style: none;
-      margin-bottom: $spacing;
-      margin-right: 40px;
-    }
-    @media (max-width: 1390px) {
-      li {
-        width: 29%;
-      }
-    }
-    @media (max-width: 1200px) {
-      li {
-        width: 29%;
-      }
-    }
-    @media (max-width: 1050px) {
-      li {
-        width: 44%;
-      }
-    }
-    @media (max-width: 750px) {
-      li {
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-  }
-
-  button {
-    margin: $spacing 0;
-  }
-}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="episode-thumb">
-    <h2>{{episode.name}}</h2>
+    <h3>{{episode.name}}</h3>
     <p>{{episode.air_date}}</p>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-characters">
+  <div>
     <h2>Characters</h2>
     <CharacterList ids />
   </div>

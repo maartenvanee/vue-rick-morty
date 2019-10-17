@@ -1,7 +1,8 @@
 <template>
   <div class="header">
-
-    <router-link to="/"><h1>Rick and Morty</h1></router-link>
+    <router-link to="/">
+      <h1>Rick and Morty</h1>
+    </router-link>
 
     <ul class="menu">
       <li>
@@ -19,14 +20,12 @@
 
 <script>
 export default {
-  name: 'Header',
-  props: {
-  }
-}
+  name: "Header",
+  props: {}
+};
 </script>
 
 <style scoped lang="scss">
-
 .header {
   display: block;
   width: 100%;
@@ -34,7 +33,6 @@ export default {
   padding: $spacing;
 
   h1 {
-    font-size: $font-size-h1;
     line-height: 40px;
   }
 
@@ -65,5 +63,4 @@ export default {
     }
   }
 }
-
 </style>
