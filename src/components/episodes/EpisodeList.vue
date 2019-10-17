@@ -1,44 +1,44 @@
 <template>
-  <div class="location-list">
+  <div class="episode-list">
     <ul>
-      <li v-for="location in locationsData" v-bind:key="location.id">
-        <LocationThumb v-bind:location="location" />
+      <li v-for="episode in episodesData" v-bind:key="episode.id">
+        <EpisodeThumb v-bind:episode="episode" />
       </li>
     </ul>
 
-    <button v-if="!disableMore" class="button-more" v-on:click="getMoreLocations">More</button>
+    <button v-if="!disableMore" class="button-more" v-on:click="getMoreEpisodes">More</button>
   </div>
 </template>
 
 <script>
-import LocationThumb from "./LocationThumb.vue";
+import EpisodeThumb from "./EpisodeThumb.vue";
 import axios from "axios";
 
 export default {
-  name: "LocationList",
+  name: "EpisodeList",
   props: [],
   components: {
-    LocationThumb
+    EpisodeThumb
   },
   data() {
     return {
-      locationsData: [],
-      locationUrl: "https://rickandmortyapi.com/api/location/",
+      episodesData: [],
+      locationUrl: "https://rickandmortyapi.com/api/episode/",
       pageNumber: 0,
       disableMore: false
     };
   },
   mounted() {
-    this.getMoreLocations();
+    this.getMoreEpisodes();
   },
   methods: {
-    getMoreLocations: function() {
+    getMoreEpisodes: function() {
       this.pageNumber += 1;
       axios
         .get(this.locationUrl + `?page=${this.pageNumber}`)
         .then(response => {
-          this.locationsData = this.locationsData.concat(response.data.results);
-          if (response.data.info.count <= this.locationsData.length) {
+          this.episodesData = this.episodesData.concat(response.data.results);
+          if (response.data.info.count <= this.episodesData.length) {
             this.disableMore = true;
           }
         });
@@ -49,7 +49,7 @@ export default {
 
 
 <style scoped lang="scss">
-.location-list {
+.episode-list {
   width: 100%;
   padding-left: $spacing;
 
